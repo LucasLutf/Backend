@@ -7,3 +7,4 @@ class EventoSerializer(ModelSerializer):
     class Meta:
         model = Evento
         fields = "__all__"
+        depth = 1

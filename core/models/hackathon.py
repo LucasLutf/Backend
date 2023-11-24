@@ -11,4 +11,4 @@ class Hackathon(models.Model):
     instituicao = models.ForeignKey(Instituicao, on_delete=models.PROTECT, related_name="hackathon")
 
     def __str__(self):
-        return self.evento
+        return f"{self.evento}"

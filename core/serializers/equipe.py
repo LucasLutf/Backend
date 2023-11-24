@@ -7,3 +7,4 @@ class EquipeSerializer(ModelSerializer):
     class Meta:
         model = Equipe
         fields = "__all__"
+        depth = 1
