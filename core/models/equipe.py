@@ -6,15 +6,6 @@ from core.models.participante import Participante
 
 class Equipe(models.Model):
     nome = models.CharField(max_length=50)
-    nota = models.IntegerField(default=0)
-    foto = models.ForeignKey(
-        Image,
-        related_name="+",
-        on_delete=models.PROTECT,
-        null=True,
-        blank=True,
-        default=None,
-    )
     evento = models.ForeignKey(Evento, on_delete=models.PROTECT, related_name="equipes")
     membros = models.ManyToManyField(Participante, related_name="equipes")
 
