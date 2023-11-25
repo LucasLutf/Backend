@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 
 from core import models
 
-from core.models import Avaliador, Evento, Equipe, Participante, Hackathon, Instituicao
+from core.models import Avaliador, Evento, Equipe, Participante, Instituicao, Nota, Criterio
 
 
 class UserAdmin(BaseUserAdmin):
@@ -56,4 +56,5 @@ admin.site.register(Instituicao)
 admin.site.register(Equipe)
 admin.site.register(Participante)
 admin.site.register(Evento)
-admin.site.register(Hackathon)
+admin.site.register(Nota)
+admin.site.register(Criterio)
