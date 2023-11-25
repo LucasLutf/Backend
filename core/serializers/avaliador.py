@@ -7,3 +7,4 @@ class AvaliadorSerializer(ModelSerializer):
     class Meta:
         model = Avaliador
         fields = "__all__"
+        depth = 1
