@@ -1,9 +1,6 @@
 from django.db import models
+from core.models import User
 
 class Participante(models.Model):
-    nome = models.CharField(max_length=50)
-    email = models.EmailField(max_length=100)
-    idade = models.IntegerField(null=False, default=0)
+    user = models.ForeignKey(User, on_delete= models.PROTECT, related_name= "participantes")
 
-    def __str__(self):
-        return self.nome
