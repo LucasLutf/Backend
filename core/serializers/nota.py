@@ -7,4 +7,5 @@ class NotaSerializer(ModelSerializer):
     class Meta:
         model = Nota
         fields = "__all__"
+        depth = 1
         
