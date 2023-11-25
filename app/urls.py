@@ -12,7 +12,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.conf import settings
 from django.conf.urls.static import static
 
-from core.views import UserViewSet, AvaliadorViewSet, EquipeViewSet, InstituicaoViewSet, ParticipanteViewSet, EventoViewSet, HackathonViewSet
+from core.views import UserViewSet, AvaliadorViewSet, EquipeViewSet, InstituicaoViewSet, ParticipanteViewSet, EventoViewSet, CriterioViewSet, NotaViewSet
 from uploader.router import router as uploader_router
 
 router = DefaultRouter()
@@ -23,7 +23,8 @@ router.register("equipes", EquipeViewSet, basename="equipes")
 router.register("instituicoes", InstituicaoViewSet, basename="instituicoes")
 router.register("participantes", ParticipanteViewSet, basename="participantes")
 router.register("eventos", EventoViewSet, basename="eventos")
-router.register("hackathons", HackathonViewSet, basename="hackathons")
+router.register("criterios", CriterioViewSet, basename="criterios")
+router.register("notas", NotaViewSet, basename="notas")
 
 
 urlpatterns = [

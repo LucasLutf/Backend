@@ -7,6 +7,8 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 from django.db import models
+from uploader.models import Image
+
 
 
 class UserManager(BaseUserManager):
@@ -38,6 +40,15 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
+    data_nascimento = models.DateField(null = True, blank = True)
+    foto = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+        default=None,
+    )
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 

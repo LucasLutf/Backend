@@ -1,22 +1,11 @@
 from django.db import models
-from uploader.models import Image
-
+from core.models import User
+from core.models.evento import Evento
 
 class Avaliador(models.Model):
-    nome = models.CharField(max_length=50)
-    email = models.EmailField(max_length=100)
-    foto = models.ForeignKey(
-        Image,
-        related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        default=None,
-    )
+    user = models.ForeignKey(User, on_delete= models.PROTECT, related_name= "avaliadores")
+    evento = models.ForeignKey(Evento, on_delete=models.PROTECT, related_name="avaliadores")
 
-
-    def __str__(self):
-        return self.nome
     
     class Meta:
         verbose_name_plural = "Avaliadores"
